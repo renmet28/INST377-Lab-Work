@@ -26,9 +26,8 @@
     width: 900px;
     display: flex;
     justify-content: space-between;
- 
-
-  .header-container {
+    
+   .header-container {
     color: #5995DA;
     background-color: #D6E9FE;
     display: flex;
