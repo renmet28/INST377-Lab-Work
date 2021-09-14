@@ -12,6 +12,8 @@
     margin: 0;
     margin-bottom: 5px;
   }
+
+
   
   .menu-container {
     color: #fff;
@@ -20,12 +22,15 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .menu {
     border: 1px solid #fff;  /* For debugging */
     width: 900px;
     display: flex;
     justify-content: space-between;
+  }
+  
+ 
     
    .header-container {
     color: #5995DA;
