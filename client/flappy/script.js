@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded' , () => {
    function control(e) {
        if (e.keycode == 32) {
            jump()
-       }
+        }
 
    }
 
