@@ -1,6 +1,3 @@
-const { clear } = require("console")
-const { clearInterval } = require("timers")
-
 document.addEventListener('DOMContentLoaded' , () => {
     const bird = document.querySelector('.bird')
     const gameDisplay = document.querySelector('.game-container')
