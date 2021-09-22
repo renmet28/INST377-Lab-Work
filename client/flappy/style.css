@@ -44,7 +44,6 @@
     height: 580px;
     position: absolute;
     
-    position: absolute;
 }
 
 .ground {
@@ -57,7 +56,7 @@
 }
 
 .bird {
-    background-color: yellow;
+    background-image: url('flappy-bird.png');
     position: absolute;
     width: 60;
     height: 45px;
