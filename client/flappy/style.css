@@ -56,13 +56,15 @@ body {
 }
 
 .bird {
-    background-image: url('flappy-bird.png');
+    /*background-image: url('flappy-bird.png');*/
     position: absolute;
     width: 60;
     height: 45px;
-    left: 220px;
-    bottom: 100px;
+    
+    background-color: black;
 }
+
+
 
 .obstacle {
     background-image: url('flappybird-pipe.png');
@@ -79,21 +81,9 @@ body {
     position: absolute;
 }
 
-.ground-container {
+.ground {
     height: 150px;
     width: 580px;
     left: 80px;
     position:  absolute;
-}
-
-.ground-moving {
-  position: absolute;
-  top: 580px;
-  height: 150px;
-  
-  background-repeat: repeat-x;
-  animation: slideright 100s infinite linear;
-  -webkit-animation: slideright 100s infinite linear;
-  width: 100%;
-  z-index: +1;
 }
