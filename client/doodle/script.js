@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let leftTimerId
     let rightTimerId
     let score = 0
+    
 
     function createDoodler() {
         grid.appendChild(doodler)
