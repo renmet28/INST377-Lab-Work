@@ -2,9 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     const doodler = document.createElement('div')
 
-    function createDoodler {
+    function createDoodler() {
         grid.appendChild(doodler)
         doodler.classList.add('doodler')
+        doodler.style.left = '50px';
     }
     createDoodler()
 })
