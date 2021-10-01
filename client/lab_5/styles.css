@@ -26,6 +26,11 @@
   margin-top: 25px;
 }
 
+.bg {
+  background-color: burlywood;
+
+}
+
 .speaker-form-header {
   text-align: center;
   background-color: #F6F7F8;
