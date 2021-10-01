@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
+    <meta charset='UTF-8'/>
+    <title>Casslyn Merritt Lab 5</title>
+    <link rel='stylesheet' href='styles.css'/>
     <form action='' method='get' class='speaker-form'>
         <div class='form-row'>
             <label for='First-name'>First Name</label>
@@ -12,22 +15,20 @@
                    name='food'
                    type='text'/>
                    
-        </div>
+                   <div class="field">
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="question">
+                        Yes
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="question">
+                        No
+                      </label>
+                    </div>
+                  </div>
 
-        <fieldset class='legacy-form-row'>
-            <legend>Veggie or Vegan?</legend>
-            <input id='talk-type-1'
-                   name='talk-type'
-                   type='radio'
-                   value='main-stage' />
-            <label for='talk-type-1' class='radio-label'>Yes</label>
-
-            <input id='talk-type-2'
-                   name='talk-type'
-                   type='radio'
-                   value='workshop'
-                   checked />
-            <label for='talk-type-2' class='radio-label'>No</label>
+      
 
             <div class='form-row'>
                 <button>Submit</button>
@@ -35,10 +36,7 @@
         </fieldset>
 
     </form>
-    <meta charset='UTF-8'/>
-    <title>Speaker Submission</title>
-    <link rel='stylesheet' href='styles.css'/>
-  </head>
+    
   <body>
     <header class='speaker-form-header'>
       <h1>Speaker Submission</h1>
