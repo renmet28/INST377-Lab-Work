@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Casslyn Merritt Lab 6</title>
+   
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+
+    <div class="columns is-vcentered">
+        <div class="column is-8">
+            <form action='' method='get' class='speaker-form'>
+                <div class="column is-8">
+                    <div class="field">
+            
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Zip Code">
+                        </div>
+                    </div>
+<script>
+const endpoint = https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json
+
+const zipcode = [];
+
+fetch(endpoint)
+    .then(blob => blob.json())
+    .then(data => zipcode.push(...data))
+function findMatches(wordToMatch, zipcode) {
+    return zipcode.filter(place => {
+        
+        const regex = new RegExp(wordToMatch,'gi');
+        return place.zipcode.match(regex) || place.zip.match(regex)
+    });
+}
+
+function numberWithCommas() {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d)))/g, ',');
+}
+
+function displayMatches() {
+    const matchArray = findMatches(this.value, zipcode);
+    const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const zipName = place.zipcode.replace(regex, `<span class='hl'>${this.
+            value}</span>`);
+            const stateName = place.state.replace(regex, `<span class='hl'>${this.
+            value}</span>`);    
+        return `
+        <li>
+            <span class='name'>${zipName}, ${stateName}</span>
+            <span class='population'>${numberWithCommas(place.population)}</span>
+        </li>
+        
+        `;
+        
+    }).join('');
+    suggestions.innerHTML = html;
+
+}
+
+const searchInput = document.querySelector('search');
+const searchInput = document.querySelector('suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', (evt) => { displayMatches(evt) });
+</script>
+
+
+
+    
+</body>
+</html>
+
