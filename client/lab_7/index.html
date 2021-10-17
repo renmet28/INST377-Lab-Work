@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Casslyn Merritt Lab 7</title>
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npmbulma@0.9.3/css/bulma.min.css'/>
+    
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <link rel='stylesheet' href='styles.css'/>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    
+   
+    
+  </head>
+  <body>
+      <h1>Casslyn Merritt Lab 7</h1>
+
+   
+    
+    <div class="columns is-vcentered">
+        <div class="column is-8">
+            <form action='' method='get' class='speaker-form'>
+                <div class="column is-8">
+                    <div class="field">
+            
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Zip Code">
+                        </div>
+                        <div class='form-row'>
+                            <button>Submit</button>
+                        </div><br>
+                        <span class='resto-name'></span><br>
+
+
+                    </div>
+                    <div id="mapid" class="leaflet-container 
+                    leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag 
+                    leaflet-touch-zoom" tabindex="0" style="position: relative;">
+                    <div  class='leaflet-pane leaflet-map-pane' style='transform: translate3d(0px, 0px 0px);'></div>
+                    <div class='leaflet-control-container'></div>
+                    </div>
+    
+
+  
+                
+<script>
+const endpoint = https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json
+
+const zipcode = [];
+
+fetch(endpoint)
+    .then(blob => blob.json())
+    .then(data => zipcode.push(...data))
+function findMatches(wordToMatch, zipcode) {
+    return zipcode.filter(place => {
+        
+        const regex = new RegExp(wordToMatch,'gi');
+        return place.zipcode.match(regex) || place.zip.match(regex)
+    });
+}
+
+function numberWithCommas() {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d)))/g, ',');
+}
+
+function displayMatches() {
+    const matchArray = findMatches(this.value, zipcode);
+    const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const zipName = place.zipcode.replace(regex, `<span class='hl'>${this.
+            value}</span>`);
+            const stateName = place.state.replace(regex, `<span class='hl'>${this.
+            value}</span>`);    
+        return `
+        <li>
+            <span class='name'>${zipName}, ${stateName}</span>
+            <span class='population'>${numberWithCommas(place.population)}</span>
+        </li>
+        
+        `;
+        
+    }).join('');
+    suggestions.innerHTML = html;
+
+}
+
+const searchInput = document.querySelector('search');
+const searchInput = document.querySelector('suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', (evt) => { displayMatches(evt) });
+</script>
+
+
+<script src="./script.js"></script>
+
+
+
+
+
+    
+</body>
+</html>
+

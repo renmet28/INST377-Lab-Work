@@ -1,0 +1,50 @@
+.visible {
+    display: block;
+    height: 150px;
+    width: 150px;
+    background-color: darkslateblue;
+}
+
+.resto-name {
+    font-weight: bold;
+    display: block;
+    background: yellow;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 4px;
+}
+.mapid { height: 180px; }
+
+element.style {
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+.leaflet-container.leaflet-touch-
+drag.leaflet-touch-zoom {
+    touch-action: none;
+}
+
+.leaflet-container.leaflet-touch-drag {
+    touch-action: none;
+    touch-action: pinch-zoom;
+}
+
+.leaflet-container.leaflet-touch-zoom {
+    touch-action: pan-x pan-y;
+}
+
+.leaflet-container {
+    font: 12px/1.5 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.leaflet-container {
+    background: #ddd;
+    outline: 0;
+}
+
+leaflet-grab {
+
+}
+
+
